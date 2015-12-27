@@ -170,10 +170,10 @@
 (s/defn generator :- Generator
   "Produce a test.check generator for schema.
 
-   leaf-generators must return generators for all leaf schemas, and can also return
-   generators for non-leaf schemas to override default generation logic.
+   leaf-generators is an optional mapping from schema to generator. It must return generators for
+   all leaf schemas, and can also return generators for non-leaf schemas to override default generation logic.
 
-   constraints is an optional mapping from schema to wrappers for the default generators,
+   wrappers is an optional mapping from schema to wrappers for the default generators,
    which can impose constraints, fix certain values, etc."
   ([schema]
      (generator schema {}))
